@@ -16,7 +16,9 @@ before_validation :get_ldap_id
 
 def get_ldap_id
 #wlasna zmiana 
-    self.id = Devise::LDAP::Adapter.get_ldap_param(self.username,"sAMAccountName").first
+# self.id = 
+#    self.id = Devise::LDAP::Adapter.get_ldap_param(self.username,"sAMAccountName").first
+# orginalny wpis : nie ma uidnumber !!!
 #    self.id = Devise::LDAP::Adapter.get_ldap_param(self.username,"uidnumber").first
 end
 

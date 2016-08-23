@@ -7,24 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <div class="container">
-<div class="nav navbar-nav navbar-left" id="bs-example-navbar-collapse-l">
-
 <%= render 'home/header' %>
-
 </div>
-</div>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
-<div class="container-fluid">
+<div class="container">
+<p role="alert">
+<%= notice %>
+<%= alert %>
+</p>
+</div>
+
+<div class="container">
 <div class="jumbotron">
 <%= yield %>
 </div>
 </div>
 
+<div class="container">
 <div class="footer">
 <%= render 'home/footer' %>
+</div>
 </div>
 </body>
 </html>

@@ -33,6 +33,7 @@ gem 'devise_ldap_authenticatable', '~> 0.8.5'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'net-ldap', '<= 0.11.0', '>= 0.6.0'
 gem 'mysql2', '~> 0.4.4'
+gem 'pry', '~> 0.10.4'
 
 
 # Use ActiveModel has_secure_password

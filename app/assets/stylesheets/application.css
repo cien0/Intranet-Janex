@@ -13,5 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-booton .container {
+width: 95%;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
