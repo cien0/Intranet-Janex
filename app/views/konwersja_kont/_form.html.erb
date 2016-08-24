@@ -1,0 +1,45 @@
+<%= form_for(@konwersja_kont) do |f| %>
+  <% if @konwersja_kont.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@konwersja_kont.errors.count, "error") %> prohibited this konwersja_kont from being saved:</h2>
+
+      <ul>
+      <% @konwersja_kont.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id %><br>
+    <%= f.number_field :Id %>
+  </div>
+  <div class="field">
+    <%= f.label :Rachunek %><br>
+    <%= f.text_field :Rachunek %>
+  </div>
+  <div class="field">
+    <%= f.label :Konto_wn_plus %><br>
+    <%= f.text_field :Konto_wn_plus %>
+  </div>
+  <div class="field">
+    <%= f.label :Konto_ma_plus %><br>
+    <%= f.text_field :Konto_ma_plus %>
+  </div>
+  <div class="field">
+    <%= f.label :Konto_wn_minus %><br>
+    <%= f.text_field :Konto_wn_minus %>
+  </div>
+  <div class="field">
+    <%= f.label :Konto_ma_minus %><br>
+    <%= f.text_field :Konto_ma_minus %>
+  </div>
+  <div class="field">
+    <%= f.label :Manual %><br>
+    <%= f.check_box :Manual %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

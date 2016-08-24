@@ -1,0 +1,1 @@
+json.partial! "konwersja_kont/konwersja_kont", konwersja_kont: @konwersja_kont

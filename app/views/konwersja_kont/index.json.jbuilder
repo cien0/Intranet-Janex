@@ -1,0 +1,1 @@
+json.array! @konwersja_kont, partial: 'konwersja_kont/konwersja_kont', as: :konwersja_kont

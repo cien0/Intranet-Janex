@@ -1,17 +1,18 @@
 <nav class="navbar navbar-dark bg-primary" >
 <ul class="nav nav-pills">
   <li class="dropdown">
-  <a href="#" class="dropdown-toggle btn navbar-btn btn-primary btn-lg active" style="margin-left:25px;data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intranet<span class="caret"></span></a>
+  <a href="" class="dropdown-toggle btn navbar-btn btn-primary btn-lg active" style="margin-left:25px;data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intranet <span class="caret"></span></a>
         <ul class="dropdown-menu">
-	    <li><%= link_to 'Strona główna', root_path, class: :"btn-default btn-lg"  %></li>
-	    <li><%= link_to 'O aplikacji', home_about_path, class: :"btn-default btn-lg" %></li>
-	    <li><%= link_to 'FAQ', home_contact_path, class: :"btn-default btn-lg"  %></li>
+	    <li><%= link_to 'Strona główna', root_path, class: :"btn btn-default btn-lg"  %></li>
+	    <li><%= link_to 'O aplikacji', home_about_path, class: :"btn btn-default btn-lg" %></li>
+	    <li><%= link_to 'FAQ', home_contact_path, class: :"btn btn-default btn-lg"  %></li>
         </ul>
 </li>
-
+   
    <% if user_signed_in? %>
-   <li role="presentation"><%= link_to 'Konwersja', home_konwersja_path, class: :"btn navbar-btn btn-primary btn-lg active" %></li>
+   <li role="presentation"><%= link_to 'Konwersja', konwersja_kont_index_path, class: :"btn navbar-btn btn-primary btn-lg active" %></li>
    <% end %>
+   
    <% if user_signed_in? && current_user.username == "administrator" %>
    <li role="presentation"><%= link_to 'Administracja', "#" , class: :"btn btn-success navbar-btn btn-lg active" %></li>
    <% end %>
@@ -21,12 +22,11 @@
    <li role="presentation"><%= link_to 'Logowanie', new_user_session_path ,class: :"btn navbar-btn btn-primary btn-lg active", style: :"margin-right:25px;"  %></li>
    </ul>
    <% end %>
-
+   
    <% if user_signed_in? %>
    <ul class="nav nav-pills navbar-right">
    <li role="presentation"><%= link_to 'Wylogowanie ', destroy_user_session_path, class: :"btn navbar-btn btn-danger btn-lg active",name: :"logout", id: :"logout",  method: :delete, data: {confirm: :"Czy jesteś pewny ?"} %></li>
    <li role="presentation"><%= link_to current_user.username, "", class: :"btn navbar-btn btn-info btn-lg active",style: :"margin-right:25px;" %></li>
-   
    </ul>   
    <% end %>
    

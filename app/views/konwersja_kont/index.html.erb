@@ -1,0 +1,46 @@
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Lista Kont dla konwersji</h1>
+
+<div class="table">
+<div class="pagination">
+  <%= will_paginate @pages %>
+</div>
+
+<table class="table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Rachunek</th>
+      <th>Konto wn plus</th>
+      <th>Konto ma plus</th>
+      <th>Konto wn minus</th>
+      <th>Konto ma minus</th>
+      <th>Manual</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |konwersja_kont| %>
+      <tr>
+        <td><%= konwersja_kont.Id %></td>
+        <td><%= konwersja_kont.Rachunek %></td>
+        <td><%= konwersja_kont.Konto_wn_plus %></td>
+        <td><%= konwersja_kont.Konto_ma_plus %></td>
+        <td><%= konwersja_kont.Konto_wn_minus %></td>
+        <td><%= konwersja_kont.Konto_ma_minus %></td>
+        <td><%= konwersja_kont.Manual %></td>
+        <td><%= link_to 'Show', konwersja_kont %></td>
+        <td><%= link_to 'Edit', edit_konwersja_kont_path(konwersja_kont) %></td>
+        <td><%= link_to 'Destroy', konwersja_kont, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Konwersja kont', new_konwersja_kont_path %>

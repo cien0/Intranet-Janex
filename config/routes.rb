@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :konta
   root 'home#index'
   devise_for :users
   get 'home/new'
@@ -8,5 +7,7 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/contact'
   get 'home/faq'
-  get 'home/konwersja'
+  resources :konwersja_kont
+  get 'konwersja_kont/index'
+  get 'konwersja_kont/:id' => 'konwersja_kont#view'
 end
