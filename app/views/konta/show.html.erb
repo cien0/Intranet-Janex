@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @kontum.Id %>
+</p>
+
+<p>
+  <strong>Rachunek:</strong>
+  <%= @kontum.Rachunek %>
+</p>
+
+<p>
+  <strong>Konto wn plus:</strong>
+  <%= @kontum.Konto_wn_plus %>
+</p>
+
+<p>
+  <strong>Konto ma plus:</strong>
+  <%= @kontum.Konto_ma_plus %>
+</p>
+
+<p>
+  <strong>Konto wn minus:</strong>
+  <%= @kontum.Konto_wn_minus %>
+</p>
+
+<p>
+  <strong>Konto ma minus:</strong>
+  <%= @kontum.Konto_ma_minus %>
+</p>
+
+<p>
+  <strong>Manual:</strong>
+  <%= @kontum.Manual %>
+</p>
+
+<%= link_to 'Edit', edit_kontum_path(@kontum) %> |
+<%= link_to 'Back', konta_path %>

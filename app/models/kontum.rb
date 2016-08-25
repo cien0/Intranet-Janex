@@ -1,0 +1,2 @@
+class Kontum < ApplicationRecord
+end

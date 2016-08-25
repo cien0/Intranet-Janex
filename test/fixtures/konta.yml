@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Id: 
+  Rachunek: MyString
+  Konto_wn_plus: MyString
+  Konto_ma_plus: MyString
+  Konto_wn_minus: MyString
+  Konto_ma_minus: MyString
+  Manual: false
+
+two:
+  Id: 
+  Rachunek: MyString
+  Konto_wn_plus: MyString
+  Konto_ma_plus: MyString
+  Konto_wn_minus: MyString
+  Konto_ma_minus: MyString
+  Manual: false

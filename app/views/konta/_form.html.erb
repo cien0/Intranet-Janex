@@ -1,0 +1,52 @@
+<%= form_for(kontum) do |f| %>
+  <% if kontum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kontum.errors.count, "error") %> prohibited this kontum from being saved:</h2>
+
+      <ul>
+      <% kontum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Id %>
+    <%= f.text_field :Id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Rachunek %>
+    <%= f.text_field :Rachunek %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Konto_wn_plus %>
+    <%= f.text_field :Konto_wn_plus %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Konto_ma_plus %>
+    <%= f.text_field :Konto_ma_plus %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Konto_wn_minus %>
+    <%= f.text_field :Konto_wn_minus %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Konto_ma_minus %>
+    <%= f.text_field :Konto_ma_minus %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Manual %>
+    <%= f.check_box :Manual %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.array! @konta, partial: 'konta/kontum', as: :kontum
