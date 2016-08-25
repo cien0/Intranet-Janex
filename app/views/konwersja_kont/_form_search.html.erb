@@ -1,0 +1,20 @@
+<%= form_tag konwersja_kont_index_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<!-- input type="text" id="query" name="query" />
+
+<script src="jquery.js"></script>
+<script src="typeahead.js"></script>
+<script>
+  $("#query").typeahead({
+    name: "book",
+    remote: "/books/autocomplete?query=%QUERY"
+  });
+</script>
+
+
+<% end %-->
