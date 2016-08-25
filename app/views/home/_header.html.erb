@@ -1,34 +1,34 @@
-<nav class="navbar navbar-dark bg-primary" >
-<ul class="nav nav-pills">
-  <li class="dropdown">
-  <a href="" class="dropdown-toggle btn navbar-btn btn-primary btn-lg active" style="margin-left:25px;data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Intranet <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-	    <li><%= link_to 'Strona główna', root_path, class: :"btn btn-default btn-lg"  %></li>
+<nav class="navbar navbar-fixed-top navbar-dark bg-primary">
+
+<div class="container-fluid">
+       <ul class="nav navbar-nav">
+      <li class="dropdown">
+	    <a href="" class="btn btn-primary dropdown-toggle btn-lg active" style="margin-left:25px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Intranet <span class="glyphicon glyphicon-menu-down"></span></a>
+    	<ul class="dropdown-menu">
+        <li><%= link_to 'Strona główna', root_path, class: :"btn btn-default btn-lg"  %></li>
 	    <li><%= link_to 'O aplikacji', home_about_path, class: :"btn btn-default btn-lg" %></li>
 	    <li><%= link_to 'FAQ', home_contact_path, class: :"btn btn-default btn-lg"  %></li>
         </ul>
-</li>
+      </li>
+	  
+      <% if user_signed_in? %>
+      <li role="presentation"><%= link_to 'Konwersja', konwersja_kont_index_path, class: :"btn btn-primary btn-lg active" %></li>
+      <% end %>
    
-   <% if user_signed_in? %>
-   <li role="presentation"><%= link_to 'Konwersja', konwersja_kont_index_path, class: :"btn navbar-btn btn-primary btn-lg active" %></li>
-   <% end %>
+      <% if user_signed_in? && current_user.username == "administrator" %>
+      <li role="presentation"><%= link_to 'Administracja', "#" , class: :"btn btn-success btn-lg active" %></li>
+      <% end %>
+    </ul>
+	<ul class="nav navbar-nav navbar-right">
+    <% if not user_signed_in? %>
+    <li role="presentation"><%= link_to ' Logowanie', new_user_session_path ,class: :"btn btn-primary btn-lg active glyphicon glyphicon-log-in", style: :"margin-right:25px;"  %></li>
+    <% end %>
    
-   <% if user_signed_in? && current_user.username == "administrator" %>
-   <li role="presentation"><%= link_to 'Administracja', "#" , class: :"btn btn-success navbar-btn btn-lg active" %></li>
-   <% end %>
-   
-   <% if not user_signed_in? %>
-   <ul class="nav nav-pills navbar-right">   
-   <li role="presentation"><%= link_to 'Logowanie', new_user_session_path ,class: :"btn navbar-btn btn-primary btn-lg active", style: :"margin-right:25px;"  %></li>
-   </ul>
-   <% end %>
-   
-   <% if user_signed_in? %>
-   <ul class="nav nav-pills navbar-right">
-   <li role="presentation"><%= link_to 'Wylogowanie ', destroy_user_session_path, class: :"btn navbar-btn btn-danger btn-lg active",name: :"logout", id: :"logout",  method: :delete, data: {confirm: :"Czy jesteś pewny ?"} %></li>
-   <li role="presentation"><%= link_to current_user.username, "", class: :"btn navbar-btn btn-info btn-lg active",style: :"margin-right:25px;" %></li>
-   </ul>   
-   <% end %>
-   
-</ul>
+    <% if user_signed_in? %>
+    <li role="presentation"><%= link_to ' Wylogowanie ', destroy_user_session_path, class: :"btn btn-danger btn-lg active glyphicon glyphicon-log-out",name: :"logout", id: :"logout",  method: :delete, data: {confirm: :"Czy jesteś pewny ?"} %></li>
+    <li role="presentation"><%= link_to " " + current_user.username, "", class: :"btn btn-info btn-lg active glyphicon glyphicon-user",style: :"margin-right:25px;" %></li>
+    <% end %>
+	</ul>
+  </div>
+
 </nav>
