@@ -1,15 +1,24 @@
-
-
 <p id="notice"><%= notice %></p>
 
 <h1>Lista Kont dla konwersji</h1>
 
 <div class="table">
+
+<%= form_tag  konwersja_kont_index_path, :method => 'get', :id => "konwersja_kont_index_search", :remote => true do %>
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
 <div class="pagination">
-  <%= will_paginate @pages %>
+<%= will_paginate @konwersja_kont %>
 </div>
 
-<%= render 'form_search' %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Szukaj", :name => nil %>
+  </p>
+
+<div id="konwersja_kont"><%= render 'konwersja_kont' %></div>
+
+<% end %>
 
 <table class="table-hover table">
   <thead>
@@ -26,7 +35,7 @@
   </thead>
 
   <tbody>
-    <% @pages.each do |konwersja_kont| %>
+    <% @konwersja_kont.each do |konwersja_kont| %>
       <tr>
         <td><%= konwersja_kont.Id %></td>
         <td><%= konwersja_kont.Rachunek %></td>

@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require bootstrap.min.js
 //= require_tree .
+
+$(function() {
+  $("#konwersja_kont th a, #konwersja_kont .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  $("#konwersja_kont_search input").keyup(function() {
+    $.get($("#konwersja_kont_search").attr("action"), $("#konwersja_kont_search").serialize(), null, "script");
+    return false;
+  });
+});

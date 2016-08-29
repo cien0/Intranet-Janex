@@ -1,9 +1,19 @@
 class KonwersjaKont < ActiveRecord::Base
 self.pluralize_table_names = false
-searchkick match: :word_start, searchable: [:Rachunek, :Konto_ma_plus]
-def search_data
-    {
-      
-    }
+
+def self.search(search)
+
+if search
+
+where('Rachunek LIKE ?', "%#{search}%")
+
+else
+
+all
+
 end
+
+
+end
+
 end

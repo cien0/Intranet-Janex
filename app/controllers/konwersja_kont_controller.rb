@@ -4,10 +4,15 @@ class KonwersjaKontController < ApplicationController
   # GET /konwersja_kont
   # GET /konwersja_kont.json
   def index
-    @pages = KonwersjaKont.paginate(page: params[:page])
-    redirect_to root_path if @pages.empty?
-    @konwersja_kont = KonwersjaKont.all
-  end
+#     @pages = KonwersjaKont.paginate(page: params[:page])
+#     redirect_to root_path if @pages.empty?
+#   @konwersja_kont = KonwersjaKont.all
+     @konwersja_kont = KonwersjaKont.search( params[:search]).paginate( :page => params[:page]) 
+#     respond_to do |format|
+#     format.html
+#     format.js
+#    end
+end
 
   # GET /konwersja_kont/1
   # GET /konwersja_kont/1.json
@@ -73,4 +78,5 @@ class KonwersjaKontController < ApplicationController
     def konwersja_kont_params
       params.require(:konwersja_kont).permit(:Id, :Rachunek, :Konto_wn_plus, :Konto_ma_plus, :Konto_wn_minus, :Konto_ma_minus, :Manual)
     end
+
 end
