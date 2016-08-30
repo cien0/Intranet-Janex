@@ -15,8 +15,7 @@
 //= require turbolinks
 //= require bootstrap.min.js
 //= require_tree .
-
-$(function() {
+function() {
   $("#konwersja_kont th a, #konwersja_kont .pagination a").live("click", function() {
     $.getScript(this.href);
     return false;

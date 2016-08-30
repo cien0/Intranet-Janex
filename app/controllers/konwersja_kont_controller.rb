@@ -4,14 +4,9 @@ class KonwersjaKontController < ApplicationController
   # GET /konwersja_kont
   # GET /konwersja_kont.json
   def index
-#     @pages = KonwersjaKont.paginate(page: params[:page])
-#     redirect_to root_path if @pages.empty?
-#   @konwersja_kont = KonwersjaKont.all
-     @konwersja_kont = KonwersjaKont.search( params[:search]).paginate( :page => params[:page]) 
-#     respond_to do |format|
-#     format.html
-#     format.js
-#    end
+@konwersja_kont = KonwersjaKont.paginate(:page => params[:page], :per_page => 10 ).search(params)
+#index.html
+#index.js
 end
 
   # GET /konwersja_kont/1
